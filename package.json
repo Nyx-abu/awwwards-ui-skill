@@ -1,6 +1,6 @@
 {
   "name": "awwwards-ui-skill",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "An open-source skill for AI coding assistants (Antigravity, Claude Code, Codex) that generates award-winning web interfaces. Covers WebGL, GSAP, Lenis, custom cursors, accessible design, and a mandatory self-audit layer.",
   "main": "index.js",
   "bin": {
