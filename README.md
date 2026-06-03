@@ -6,23 +6,23 @@
 [![Claude Skills](https://img.shields.io/badge/Claude%20Skills-compatible-blueviolet)](https://claude.ai)
 [![Antigravity](https://img.shields.io/badge/Antigravity-compatible-orange)](https://antigravity.dev)
 
-An open-source skill for AI coding assistants that teaches them to generate award-winning web interfaces. Covers WebGL, GSAP scroll animations, Lenis smooth scrolling, custom cursors, curated color palettes, and a mandatory accessibility + performance self-audit.
+An open-source skill that raises the design quality of AI-generated web interfaces. When AI agents build UIs without guidance, they default to generic layouts, flat aesthetics, and missed accessibility standards. This skill fixes that — injecting design intent around motion, typography, color, and interaction directly into the agent's context.
 
 Compatible with **Antigravity**, **Claude Code**, and **Codex**.
 
 ---
 
-## What It Produces
+## Examples
 
-A portfolio site with WebGL particles, neon accents, and a full-bleed asymmetric hero:
+A developer portfolio — full-bleed hero, WebGL particle field, bento-box grid:
 
 ![Portfolio demo](./docs/screenshots/portfolio.png)
 
-An agency site with horizontal scroll, glassmorphism overlays, and mix-blend-mode cursor effects:
+An agency site — asymmetric typography, glassmorphism overlays, mix-blend-mode cursor:
 
 ![Agency demo](./docs/screenshots/agency.png)
 
-A product landing page with a 3D object, scroll-triggered typography reveals, and pastel accents:
+A product landing page — dark mode, 3D CSS object, scroll-triggered reveals:
 
 ![Product landing demo](./docs/screenshots/product.png)
 
@@ -74,20 +74,20 @@ Just ask your AI assistant:
 
 > "Build me a portfolio with a cool UI"
 
-The skill auto-triggers on keywords like `cool ui`, `amazing ui`, `premium design`, and `awwwards style`. From there the AI will implement 3D backgrounds, smooth scrolling, a custom cursor, and verified accessible markup — then run a self-audit before returning the code.
+The skill auto-triggers on keywords like `cool ui`, `premium design`, and `awwwards style`. The agent will apply structured design decisions — layout, motion, typography, color — and run an internal audit on accessibility and performance before returning any code.
 
 ---
 
-## What the Skill Teaches the AI
+## What It Covers
 
-- **Layouts:** Full-bleed asymmetric heroes, bento-box feature grids, horizontal scroll sequences
-- **Motion:** GSAP ScrollTrigger reveals, Lenis smooth scrolling, parallax layering, text scramble effects
-- **Cursors:** `requestAnimationFrame`-driven magnetic custom cursors with `mix-blend-mode: difference`
-- **3D:** Three.js WebGL particle fields and shader-based distortion responding to mouse input
-- **Color Palettes:** Four curated palettes mined from top Awwwards developer sites
-- **Typography:** Variable font axes, display-scale contrast, tight heading tracking
-- **Accessibility:** WCAG AA contrast, semantic HTML, ARIA roles, `prefers-reduced-motion` handling
-- **Self-Audit:** A mandatory checklist the AI runs on its own output before returning code
+- **Layouts:** Full-bleed heroes, bento-box grids, asymmetric sections, horizontal scroll sequences
+- **Motion:** GSAP ScrollTrigger reveals, Lenis smooth scrolling, parallax, text scramble transitions
+- **Cursors:** RAF-driven custom cursors, magnetic snapping, `mix-blend-mode: difference` on hover
+- **3D:** Three.js particle fields and shader-based distortion tied to mouse input
+- **Color:** Four curated palettes derived from top developer portfolio sites, with contrast rules baked in
+- **Typography:** Display-scale contrast, tight heading tracking, variable font axis animation
+- **Accessibility:** WCAG AA contrast enforcement, semantic HTML, ARIA roles, `prefers-reduced-motion` support
+- **Self-Audit:** The agent checks its own output for layout, performance, and accessibility issues before returning code
 
 ---
 
