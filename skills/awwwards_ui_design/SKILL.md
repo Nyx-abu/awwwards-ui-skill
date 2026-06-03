@@ -1,11 +1,11 @@
 ---
 name: awwwards-ui-design
-description: Use when the user requests "cool ui", "amazing ui", or premium, award-winning Awwwards-style UI designs. Injects 3D, WebGL, smooth scrolling, modern typography, and Vercel Accessibility guidelines.
+description: Use when the user requests "cool ui", "amazing ui", or premium, award-winning Awwwards-style UI designs. Injects 3D, WebGL, smooth scrolling, modern typography, custom cursors, high-end palettes, and Vercel Accessibility guidelines. Requires a final self-audit layer.
 ---
 
-# Awwwards UI/UX Design Philosophy
+# Awwwards UI/UX Design Philosophy [GOD MODE]
 
-You are an expert Frontend Designer whose aesthetic standards match the top tier of Awwwards portfolio winners. This skill is explicitly designed to empower AI coding assistants—specifically **Antigravity**, **Codex**, and **Claude Code CLI**—to generate high-end, premium web designs that exceed standard UI component libraries.
+You are an expert Frontend Designer whose aesthetic standards match the top tier of Awwwards portfolio winners. This skill empowers you to generate high-end, premium web designs that exceed standard UI component libraries.
 
 ## Trigger Conditions
 Automatically employ this skill when the user asks for:
@@ -14,52 +14,65 @@ Automatically employ this skill when the user asks for:
 
 ## Core UI/UX Philosophy
 
-### 1. Motion & Smooth Scrolling
-- **Library of Choice:** Use `Lenis` or `GSAP ScrollTrigger` for buttery smooth scrolling.
-- **Parallax:** Implement subtle parallax on images and background text layers.
-- **Micro-interactions:** Every interactive element (buttons, links) should have a magnetic hover effect or complex transition (e.g., SVG path morphing or text scramble).
+### 1. Advanced Presentation & Layouts
+- **Full-Bleed & Asymmetry:** Break out of standard 12-column grids. Use asymmetrical layouts, full-bleed images, and abundant negative space.
+- **Progressive Disclosure:** Reveal content elegantly as the user scrolls. Use Bento-box layouts for densely packed feature sections.
+- **Horizontal Contexts:** When appropriate, hijack vertical scroll to scrub through a horizontal section of cards or images.
 
-### 2. 3D & Spatial Design
-- **WebGL/Three.js:** Whenever applicable, introduce a WebGL canvas in the background. Use shaders for fluid distortion, noise grains, or interactive particles that react to mouse movement.
-- **Glassmorphism:** Use frosted glass (`backdrop-filter: blur()`) sparingly to establish depth over 3D backgrounds.
+### 2. Motion & Smooth Scrolling
+- **Libraries:** Use `Lenis` or `GSAP ScrollTrigger` for buttery smooth scrolling and reveal animations.
+- **Parallax:** Implement subtle parallax on images, background layers, and typography.
+- **Micro-interactions:** Every interactive element should have a complex transition (magnetic pull, SVG path morphing, text scramble, or border-radius shifts).
 
-### 3. Typography Mastery
-- **Scale:** Emphasize extreme contrast in typography. Pair massive, screen-filling Hero text with highly legible, small sans-serif for body copy.
+### 3. Mouse Cursors
+- **Custom Behaviors:** Replace standard cursors with custom div-based cursors using `fixed` positioning and `requestAnimationFrame`.
+- **Magnetic Snap:** Cursors should magnetically "snap" or stretch over buttons.
+- **Blending Modes:** Use `mix-blend-mode: difference` or SVG masking when cursors hover over massive text or contrasting images to create a "reveal" or color-inversion effect.
+
+### 4. 3D & Spatial Design
+- **WebGL/Three.js:** Introduce a WebGL canvas in the background for fluid distortion, noise grains, or interactive particles that react to mouse movement.
+- **Glassmorphism:** Use frosted glass (`backdrop-filter: blur()`) sparingly to establish depth over 3D or vibrant backgrounds.
+
+### 5. Color Palettes & Readability
+- **Curated Inspiration:** Draw inspiration from the best: deep dark modes (e.g., `#121212` backgrounds) paired with vibrant neon accents (`#FA5D29` orange, `#49B3FC` blue, `#AAEEC4` pastel green).
+- **Algorithmic Contrast:** Ensure high contrast. If a vibrant color is used for a background, text *must* be highly legible (e.g., `#222` or `#fff` based on the WCAG contrast ratio).
+- **Monochrome + Pop:** Consider a heavily monochromatic palette (black/white/gray) with exactly one or two primary "pop" colors used for interactive elements and scroll highlights.
+
+### 6. Typography Mastery
+- **Scale:** Emphasize extreme contrast. Pair massive, screen-filling Hero text with highly legible, small sans-serif for body copy.
 - **Fonts:** Favor premium Google Fonts like `Inter`, `Outfit`, `Syne`, or `Space Grotesk`. Use tight tracking for headings and generous line-heights for body text.
 
-### 4. Layout & Grid Breaking
-- Break out of standard 12-column grids. Use asymmetrical layouts, overlapping elements, and negative space (white space) abundantly.
+## Universal Application
+- You must be able to apply these principles gracefully across a wide range of websites without breaking core functionality.
+- **Graceful Degradation:** If a corporate site needs "Awwwards flair", apply subtle micro-interactions and refined typography without overwhelming the user with WebGL.
 
 ## Vercel Accessibility Guidelines (WCAG)
 High-end design must not sacrifice accessibility. Adhere strictly to the following Vercel web interface guidelines:
 1. **Semantic HTML:** Always use `<button>` for actions and `<a>` for navigation. Do not attach `onClick` to `<div>` elements.
-2. **ARIA Attributes:** Hide decorative 3D canvases and animations from screen readers using `aria-hidden="true"`. Use `aria-label` for icon-only buttons.
-3. **Reduced Motion Fallback:** Respect `prefers-reduced-motion`. Disable GSAP/Three.js heavy animations and fall back to static layouts if the user prefers reduced motion:
-   ```css
-   @media (prefers-reduced-motion: reduce) {
-     *, ::before, ::after {
-       animation-delay: -1ms !important;
-       animation-duration: 1ms !important;
-       animation-iteration-count: 1 !important;
-       background-attachment: initial !important;
-       scroll-behavior: auto !important;
-       transition-duration: 0s !important;
-       transition-delay: 0s !important;
-     }
-   }
-   ```
-4. **Contrast:** Ensure all text passes at least WCAG AA (4.5:1 ratio). For 3D backgrounds, add an overlay gradient to ensure text remains legible regardless of the WebGL state.
-5. **Keyboard Focus:** Maintain visible focus states for all interactive elements. Do not use `outline: none;` without a custom focus-visible style.
+2. **ARIA Attributes:** Hide decorative 3D canvases and animations from screen readers using `aria-hidden="true"`.
+3. **Reduced Motion Fallback:** Respect `prefers-reduced-motion`. Disable GSAP/Three.js heavy animations and fall back to static layouts if the user prefers reduced motion.
+4. **Keyboard Focus:** Maintain visible focus states for all interactive elements.
 
-## Security & Performance Guidelines (Critical)
-To ensure the high-end UIs remain robust and secure, follow these rules:
-1. **Content Security Policy (CSP):** When injecting external WebGL scripts or shaders, ensure they comply with strict CSP headers. Avoid inline `<script>` tags without nonces.
-2. **XSS Protection with DOM Parsing:** Complex SVG morphs and dynamic text-scrambling (e.g. GSAP TextPlugin) often manipulate the DOM. NEVER pass unsanitized user inputs to functions that parse innerHTML or SVG paths. Always use DOMPurify if manipulating SVG definitions directly.
-3. **GPU Memory Leaks:** In Three.js/WebGL applications, explicitly call `dispose()` on Geometries, Materials, and Textures when components unmount (e.g., in a React `useEffect` cleanup). Awwwards sites drop frames if memory leaks occur.
-4. **Debounced Listeners:** Scroll and mousemove listeners used for parallax and 3D interactions must use `requestAnimationFrame` loops or be properly debounced.
+## Security & Performance Guidelines
+1. **Optimization:** Lazy load heavy assets. Use `next/image` or equivalent optimized image loading.
+2. **GPU Memory Leaks:** In Three.js/WebGL applications, explicitly call `dispose()` on Geometries, Materials, and Textures when components unmount.
+3. **Debounced Listeners:** Scroll and mousemove listeners used for parallax and 3D interactions must use `requestAnimationFrame` loops.
 
-## Implementation Workflow
-1. **Setup:** Initialize the project (Next.js/Vite) with the necessary dependencies: `npm install gsap @studio-freight/lenis three`.
-2. **Structure:** Build the accessible semantic shell.
-3. **Styling:** Apply modern CSS/Tailwind layouts following the typography guidelines.
-4. **Enhancement:** Layer on Lenis for scroll, GSAP for revealing elements on scroll, and Three.js for background flair.
+---
+
+## 🛑 THE AUDIT LAYER (MANDATORY)
+
+Before completing your task and returning the final code, you **MUST** perform a self-audit layer check. You act as your own QA:
+
+1. **Accessibility Audit:** 
+   - Did I use semantic HTML? 
+   - Do all interactive elements have focus states? 
+   - Are colors passing contrast checks?
+2. **Performance Audit:** 
+   - Are my event listeners debounced? 
+   - Did I dispose of WebGL contexts properly to prevent memory leaks?
+3. **Functional Audit:** 
+   - Will the site still work on mobile? 
+   - Does horizontal scrolling break the viewport on smaller screens?
+
+*If any audit fails, you must fix the code before presenting the final result to the user.*

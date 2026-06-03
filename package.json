@@ -1,7 +1,7 @@
 {
   "name": "awwwards-ui-skill",
   "version": "1.0.0",
-  "description": "An open-source skill that empowers AI assistants (Antigravity, Codex, Claude Code CLI) to design stunning, award-winning web interfaces. This skill bridges the gap between functional AI code generation and high-end, premium web design.",
+  "description": "GOD MODE: The ultimate open-source UI Agent Skill. Empowers AI coding assistants (Antigravity, Claude Code, Codex) to autonomously design stunning, Awwwards-winning web interfaces. Injects WebGL, GSAP, Lenis smooth scrolling, strict accessibility (WCAG), and advanced CSS architectures directly into AI-generated frontends.",
   "main": "index.js",
   "bin": {
     "awwwards-ui-skill": "./bin/cli.js"
@@ -9,7 +9,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "awwwards",
+    "ui",
+    "ai-skill",
+    "claude-skills",
+    "claude-code",
+    "antigravity",
+    "agentic",
+    "frontend-automation",
+    "threejs",
+    "gsap",
+    "accessibility",
+    "design",
+    "god-mode"
+  ],
   "author": "",
   "license": "ISC"
 }
