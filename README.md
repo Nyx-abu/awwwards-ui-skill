@@ -30,11 +30,31 @@ A product landing page with a 3D object, scroll-triggered typography reveals, an
 
 ## Installation
 
+You can automatically install this skill to your Antigravity, Claude Code, and Codex config directories by running:
+
 ```bash
-npm i awwwards-ui-skill
+npx awwwards-ui-skill
 ```
 
-### For Antigravity
+If it prompts you to install the package, type `y`:
+
+```text
+PS C:\Users\shoto> npx awwwards-ui-skill
+Need to install the following packages:
+awwwards-ui-skill@1.1.0
+Ok to proceed? (y) y
+
+> npx
+> awwwards-ui-skill
+
+🚀 Installing Awwwards UI/UX Agent Skill...
+✅ Successfully installed skill to C:\Users\shoto\.gemini\config\plugins\awwwards_ui_design\SKILL.md
+✅ Successfully installed skill to C:\Users\shoto\.claude\skills\SKILL.md
+✅ Successfully installed skill to C:\Users\shoto\.codex\skills\SKILL.md
+🎉 You're all set! Tell your AI agent to build a 'cool ui' and watch the magic happen.
+```
+
+### Manual Installation (Antigravity)
 
 Clone into your plugins directory:
 

@@ -2,14 +2,17 @@
 
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 
 console.log("🚀 Installing Awwwards UI/UX Agent Skill...");
 
 const skillSourcePath = path.join(__dirname, '../skills/awwwards_ui_design/SKILL.md');
+const homeDir = os.homedir();
+
 const targetDirs = [
-  path.join(process.cwd(), '.gemini/config/plugins/awwwards_ui_design'),
-  path.join(process.cwd(), '.claude/skills'),
-  path.join(process.cwd(), '.codex/skills')
+  path.join(homeDir, '.gemini/config/plugins/awwwards_ui_design'),
+  path.join(homeDir, '.claude/skills'),
+  path.join(homeDir, '.codex/skills')
 ];
 
 let installed = false;
