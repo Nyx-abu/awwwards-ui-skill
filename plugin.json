@@ -1,0 +1,9 @@
+{
+  "name": "awwwards-ui-skill",
+  "version": "1.0.0",
+  "description": "Empowers agents to generate premium, Awwwards-style UI designs with Vercel Accessibility compliance.",
+  "author": "Antigravity",
+  "engines": {
+    "antigravity": ">=1.0.0"
+  }
+}
