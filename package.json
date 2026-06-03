@@ -1,0 +1,15 @@
+{
+  "name": "awwwards-ui-skill",
+  "version": "1.0.0",
+  "description": "An open-source skill that empowers AI assistants (Antigravity, Codex, Claude Code CLI) to design stunning, award-winning web interfaces. This skill bridges the gap between functional AI code generation and high-end, premium web design.",
+  "main": "index.js",
+  "bin": {
+    "awwwards-ui-skill": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

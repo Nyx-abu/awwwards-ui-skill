@@ -51,6 +51,13 @@ High-end design must not sacrifice accessibility. Adhere strictly to the followi
 4. **Contrast:** Ensure all text passes at least WCAG AA (4.5:1 ratio). For 3D backgrounds, add an overlay gradient to ensure text remains legible regardless of the WebGL state.
 5. **Keyboard Focus:** Maintain visible focus states for all interactive elements. Do not use `outline: none;` without a custom focus-visible style.
 
+## Security & Performance Guidelines (Critical)
+To ensure the high-end UIs remain robust and secure, follow these rules:
+1. **Content Security Policy (CSP):** When injecting external WebGL scripts or shaders, ensure they comply with strict CSP headers. Avoid inline `<script>` tags without nonces.
+2. **XSS Protection with DOM Parsing:** Complex SVG morphs and dynamic text-scrambling (e.g. GSAP TextPlugin) often manipulate the DOM. NEVER pass unsanitized user inputs to functions that parse innerHTML or SVG paths. Always use DOMPurify if manipulating SVG definitions directly.
+3. **GPU Memory Leaks:** In Three.js/WebGL applications, explicitly call `dispose()` on Geometries, Materials, and Textures when components unmount (e.g., in a React `useEffect` cleanup). Awwwards sites drop frames if memory leaks occur.
+4. **Debounced Listeners:** Scroll and mousemove listeners used for parallax and 3D interactions must use `requestAnimationFrame` loops or be properly debounced.
+
 ## Implementation Workflow
 1. **Setup:** Initialize the project (Next.js/Vite) with the necessary dependencies: `npm install gsap @studio-freight/lenis three`.
 2. **Structure:** Build the accessible semantic shell.
