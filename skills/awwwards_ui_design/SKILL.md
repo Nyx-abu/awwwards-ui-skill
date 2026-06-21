@@ -21,6 +21,9 @@ Automatically employ this skill when the user asks for:
 
 Use these sources as the conceptual baseline, then adapt them to the user's product and tech stack:
 - `motion.zajno.com` identifies the animation vocabulary this skill should actively use: easing, offset/delay, fade paired with movement, transform/morph, masking, dimensionality, parallax, and zoom continuity.
+- `styles.refero.design` serves as the baseline for systematic design tokens: enforcing strict visual constraints, structured typography scales, high-contrast aesthetics, and consistent spacing rules.
+- `ui.aceternity.com` & `componentry.fun` define the standard for React + Framer Motion components: use copy-pasteable blueprints for Bento Grids, Sticky Scroll Cards, Kinetic Text, and Magnetic Docks.
+- `recent.design/x` defines modern micro-interactions: use spring physics (stiffness, damping, mass) for UI feedback to achieve a snappy, fluid feel.
 - `Awwwards Directory` shows the production categories this skill should design for: agency/studio, UX/UI, web design, interactive, web development, and country/market context.
 - `Awwwards GSAP` shows the interaction tags and technologies this skill should be able to combine: animation, scrolling, parallax, microinteractions, storytelling, typography, responsive design, GSAP, Canvas API, Three.js, WebGL, React, and Vite.
 
@@ -97,6 +100,34 @@ Draw inspiration from curated, award-winning sites. The following palettes are e
 - **Font Range:** Prefer distinctive pairings that fit the domain. `Syne`, `Outfit`, `Archivo`, `Sora`, `Bricolage Grotesque`, `Fraunces`, and `Instrument Serif` can work; avoid defaulting to Inter unless the product context calls for restraint.
 - **Tracking:** Keep letter spacing at `0` unless the existing design system requires otherwise. Use weight, size, contrast, and line-height rather than negative tracking for polish.
 - **Variable Fonts:** When available, use variable font axes to animate weight or width on scroll.
+
+---
+
+## React & Framer Motion Blueprints (Aceternity & Componentry)
+
+When building in a React environment, default to these high-performance patterns:
+- **Velocity Scroll & Marquees**: Use Framer Motion's `useScroll` and `useSpring` combined with `useTransform` to bind x-axis translation to the scroll position.
+- **Bento Grids**: Design feature sections using asymmetric grids. Animate grid items with staggered `initial={{ opacity: 0, y: 20 }}` and `whileInView={{ opacity: 1, y: 0 }}`.
+- **Sticky Scroll Cards**: Pin sections to the viewport while internal cards scroll past. Use CSS `position: sticky` or Framer Motion's scroll tracking for the choreography.
+- **Text Repel & Kinetic Text**: Animate words or characters individually using Framer Motion variants. Use `staggerChildren: 0.05` for smooth cascading reveals.
+- **Magnetic Components**: Wrap buttons or icons in a Framer Motion component that tracks `onMouseMove` to calculate a bounded `x/y` offset based on cursor proximity, returning to center on `onMouseLeave`.
+
+## Spring Physics & Micro-Interactions (recent.design/x)
+
+Modern UI feels "alive" due to physics-based animations rather than linear easing.
+- **Avoid standard easing** (like `ease-in-out`) for interactive elements.
+- **Use Framer Motion Springs** for state changes (hover, click, drag).
+- **Recommended Spring Configs**:
+  - **Snappy / Bouncy (Cards, Modals)**: `{ type: "spring", stiffness: 300, damping: 20 }`
+  - **Fluid / Smooth (Hover states, Cursors)**: `{ type: "spring", stiffness: 150, damping: 15, mass: 0.5 }`
+  - **Heavy / Dramatic (Hero reveals)**: `{ type: "spring", stiffness: 100, damping: 30 }`
+
+## Systematic Design Tokens (styles.refero.design)
+
+Even avant-garde design needs mathematical structure. Do not guess arbitrary pixel values.
+- **Spacing Scale**: Enforce a strict 4px/8px baseline (e.g., `4, 8, 12, 16, 24, 32, 48, 64, 96, 128`).
+- **Typography Scale**: Use geometric progression for headers. E.g., `12px (caption)`, `16px (body)`, `24px (h3)`, `48px (h2)`, `80px+ (h1/display)`.
+- **Radii**: Use deliberate extremes. Either `0px` (Neobrutalism/sharp), `8px` (subtle/technical), or `9999px` (pill/friendly). Avoid mixing `4px` and `12px` arbitrarily.
 
 ---
 
