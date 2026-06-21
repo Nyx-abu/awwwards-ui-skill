@@ -78,6 +78,32 @@ The skill auto-triggers on keywords like `cool ui`, `premium design`, and `awwwa
 
 ---
 
+## Measurable outcome
+
+The skill now requires a **UI-Max Scorecard** before an agent returns UI code. The target is **88/100 minimum**, scored across:
+
+- `MOTION-01` easing, offset/delay, and fade paired with spatial movement
+- `MOTION-02` primary, secondary, and ambient motion layers
+- `LAYOUT-01` first-viewport composition and Awwwards-style hierarchy
+- `DEPTH-01` dimensionality through parallax, masking, morphing, or zoom continuity
+- `INTERACTION-01` microinteractions beyond color/opacity changes
+- `A11Y-01` semantic HTML, contrast, focus states, `aria-hidden`, and reduced motion
+- `PERF-01` requestAnimationFrame-safe pointer/scroll work and WebGL cleanup expectations
+- `RESP-01` responsive resilience at 375px, 768px, and 1440px
+- `BRAND-01` domain fit instead of generic visual spectacle
+
+Run the deterministic verifier:
+
+```bash
+npm test
+```
+
+The test checks that the skill, README, handover, and sample website all include the scorecard contract and implementation evidence.
+
+The sample site is at `../awwwards-ui-skill-test/index.html`. It demonstrates the upgraded skill surface with a visible scorecard, custom cursor, magnetic controls, masked media reveal, parallax layer, zoom stage, bento grid, `IntersectionObserver`, `prefers-reduced-motion`, and `requestAnimationFrame`.
+
+---
+
 ## What It Covers
 
 - **Layouts:** Full-bleed heroes, bento-box grids, asymmetric sections, horizontal scroll sequences
@@ -88,6 +114,7 @@ The skill auto-triggers on keywords like `cool ui`, `premium design`, and `awwwa
 - **Typography:** Display-scale contrast, tight heading tracking, variable font axis animation
 - **Accessibility:** WCAG AA contrast enforcement, semantic HTML, ARIA roles, `prefers-reduced-motion` support
 - **Self-Audit:** The agent checks its own output for layout, performance, and accessibility issues before returning code
+- **Measurement:** The UI-Max Scorecard turns design quality into auditable pass/fail evidence instead of subjective taste language
 
 ---
 
